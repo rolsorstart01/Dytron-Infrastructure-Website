@@ -5,32 +5,32 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer bg-blue">
+    <footer className="footer bg-obsidian-base border-t">
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="footer-logo">
               <Building2 size={32} className="text-gold" />
-              <h3>Dytron Infrastructure</h3>
+              <h3 className="tracking-tight">DYTRON</h3>
             </div>
-            <p className="tagline text-gold">Innovation in Every Structure</p>
-            <p className="company-desc">
+            <p className="tagline text-gold tracking-widest">INNOVATION IN EVERY STRUCTURE</p>
+            <p className="company-desc text-secondary">
               A trusted leader in delivering world-class, sustainable infrastructure through high-quality, cost-effective, and timely EPC/civil contracts.
             </p>
           </div>
 
           <div className="footer-links">
-            <h4>Quick Links</h4>
+            <h4 className="tracking-widest">QUICK LINKS</h4>
             <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/projects">Our Projects</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/">HOME</Link></li>
+              <li><Link to="/about">ABOUT US</Link></li>
+              <li><Link to="/projects">OUR PROJECTS</Link></li>
+              <li><Link to="/contact">CONTACT</Link></li>
             </ul>
           </div>
 
           <div className="footer-contact">
-            <h4>Contact Us</h4>
+            <h4 className="tracking-widest">CONNECT</h4>
             <ul>
               <li>
                 <MapPin size={18} className="text-gold" />
@@ -38,7 +38,7 @@ const Footer = () => {
               </li>
               <li>
                 <Phone size={18} className="text-gold" />
-                <span>+91 9874248732<br/>+91 9831117297</span>
+                <span>+91 9874248732</span>
               </li>
               <li>
                 <Mail size={18} className="text-gold" />
@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Dytron Infrastructure Pvt. Ltd. (Formerly Dytron Industries Pvt. Ltd.). All rights reserved.</p>
+          <p className="tracking-widest">&copy; {new Date().getFullYear()} DYTRON INFRASTRUCTURE PVT. LTD. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </footer>

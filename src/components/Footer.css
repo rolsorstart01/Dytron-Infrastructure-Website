@@ -1,5 +1,14 @@
 .footer {
   padding: var(--spacing-lg) 0 var(--spacing-md);
+  padding-bottom: calc(var(--spacing-xl) + 20px); /* Leave room for floating dock */
+}
+
+.border-t {
+  border-top: 1px solid var(--obsidian-border);
+}
+
+.bg-obsidian-base {
+  background-color: var(--obsidian-base);
 }
 
 .footer-grid {
@@ -23,27 +32,27 @@
 }
 
 .footer-logo h3 {
-  color: var(--neutral-white);
+  color: var(--text-primary);
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 .tagline {
   font-weight: 600;
   margin-bottom: var(--spacing-sm);
+  font-size: 0.8rem;
 }
 
 .company-desc {
-  color: var(--neutral-light);
   font-size: 0.9rem;
   max-width: 400px;
 }
 
 .footer-links h4,
 .footer-contact h4 {
-  color: var(--accent-gold);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 
 .footer-links ul,
@@ -57,7 +66,11 @@
 }
 
 .footer-links a {
-  color: var(--neutral-light);
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
 }
 
 .footer-links a:hover {
@@ -70,14 +83,14 @@
   align-items: flex-start;
   gap: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
-  color: var(--neutral-light);
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: var(--spacing-md);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--neutral-gray);
-  font-size: 0.8rem;
+  border-top: 1px solid var(--obsidian-border);
+  color: var(--text-muted);
+  font-size: 0.75rem;
 }

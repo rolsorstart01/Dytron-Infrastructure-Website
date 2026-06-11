@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Building, MapPin, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 import './Projects.css';
 
 const Projects = () => {
@@ -60,12 +61,41 @@ const Projects = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
+
   return (
-    <div className="projects-page animate-fade-in">
+    <div className="projects-page">
       <section className="page-header">
         <div className="container">
-          <h1 className="page-title">Our Projects</h1>
-          <p className="page-subtitle">A footprint of structural excellence across East & Northeast India</p>
+          <motion.h1 
+            className="page-title tracking-tight text-center"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            OUR PROJECTS
+          </motion.h1>
+          <motion.p 
+            className="page-subtitle text-center tracking-widest"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            A FOOTPRINT OF STRUCTURAL EXCELLENCE
+          </motion.p>
         </div>
       </section>
 
@@ -86,42 +116,52 @@ const Projects = () => {
             </button>
           </div>
 
-          <div className="projects-grid">
+          <motion.div 
+            className="projects-grid"
+            variants={containerVariants}
+            initial="hidden"
+            animate="show"
+            key={activeTab} // Re-trigger animation on tab change
+          >
             {activeTab === 'active' && activeProjects.map(project => (
-              <div key={project.id} className="project-card animate-fade-in">
-                <div className="project-card-header bg-blue">
-                  <h3>{project.title}</h3>
-                </div>
-                <div className="project-card-body">
-                  <div className="project-meta">
-                    <span className="meta-item"><MapPin size={16}/> {project.location}</span>
+              <motion.div key={project.id} className="project-card grayscale-hover" variants={itemVariants}>
+                <div className="project-card-inner glass-panel">
+                  <div className="project-card-header bg-obsidian-light border-b">
+                    <h3 className="tracking-tight">{project.title}</h3>
                   </div>
-                  <p className="project-details">{project.details}</p>
-                  <div className="project-client">
-                    <strong>Client:</strong> {project.client}
+                  <div className="project-card-body">
+                    <div className="project-meta text-secondary">
+                      <span className="meta-item"><MapPin size={16} className="text-gold" /> {project.location}</span>
+                    </div>
+                    <p className="project-details">{project.details}</p>
+                    <div className="project-client">
+                      <strong className="text-gold">Client:</strong> <span className="text-secondary">{project.client}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
 
             {activeTab === 'past' && pastProjects.map(project => (
-              <div key={project.id} className="project-card animate-fade-in">
-                <div className="project-card-header bg-gold">
-                  <h3 className="text-blue">{project.title}</h3>
-                </div>
-                <div className="project-card-body">
-                  <div className="project-meta">
-                    <span className="meta-item"><MapPin size={16}/> {project.location}</span>
-                    <span className="meta-category"><Building size={16}/> {project.category}</span>
+              <motion.div key={project.id} className="project-card grayscale-hover" variants={itemVariants}>
+                <div className="project-card-inner glass-panel">
+                  <div className="project-card-header bg-obsidian-light border-b">
+                    <h3 className="tracking-tight">{project.title}</h3>
                   </div>
-                  <p className="project-details">{project.details}</p>
-                  <div className="project-status">
-                    <CheckCircle size={16} className="text-gold"/> Successfully Completed
+                  <div className="project-card-body">
+                    <div className="project-meta text-secondary">
+                      <span className="meta-item"><MapPin size={16} className="text-gold" /> {project.location}</span>
+                      <span className="meta-category"><Building size={16} className="text-gold" /> {project.category}</span>
+                    </div>
+                    <p className="project-details">{project.details}</p>
+                    <div className="project-status">
+                      <CheckCircle size={16} className="text-gold"/> <span className="text-secondary">Successfully Completed</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

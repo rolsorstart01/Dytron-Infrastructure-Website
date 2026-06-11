@@ -1,20 +1,18 @@
-/* Page Header styles can be shared or specific */
 .page-header {
-  background-color: var(--primary-blue-dark);
-  color: var(--neutral-white);
-  padding: calc(var(--spacing-lg) * 1.5) 0 var(--spacing-lg);
-  text-align: center;
+  padding: calc(var(--spacing-lg) * 2) 0 var(--spacing-lg);
+  border-bottom: 1px solid var(--obsidian-border);
+  background: radial-gradient(circle at center top, rgba(10, 37, 64, 0.4), transparent 70%);
 }
 
 .page-title {
-  font-size: 3rem;
-  color: var(--neutral-white);
-  margin-bottom: var(--spacing-sm);
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xs);
 }
 
 .page-subtitle {
   color: var(--accent-gold);
-  font-size: 1.25rem;
+  font-size: 0.9rem;
 }
 
 /* Profile Section */
@@ -27,53 +25,45 @@
 
 @media (min-width: 768px) {
   .profile-grid {
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 .lead-text {
   font-size: 1.25rem;
-  color: var(--primary-blue);
   margin-bottom: var(--spacing-md);
+  color: var(--primary-blue-light);
 }
 
-.profile-graphic {
-  position: relative;
+.profile-graphic-container {
   width: 100%;
-  aspect-ratio: 4/3;
-  background-color: var(--neutral-offwhite);
-  border-radius: var(--border-radius-lg);
+  aspect-ratio: 1/1;
+  background-color: var(--obsidian-light);
+  border: 1px solid var(--obsidian-border);
+  border-radius: var(--radius-md);
+  position: relative;
   overflow: hidden;
+  background-image: url('/hero_bg.png'); /* fallback bg */
+  background-size: cover;
+  background-position: center;
 }
 
-.graphic-blue {
+.graphic-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50%;
-  height: 80%;
-  background-color: var(--primary-blue);
-  border-top-right-radius: 50px;
-}
-
-.graphic-gold {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-  height: 60%;
-  background-color: var(--accent-gold);
-  border-top-left-radius: 50px;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(10, 37, 64, 0.8), rgba(255, 179, 0, 0.2));
 }
 
 /* Chairman Section */
-.chairman-section {
-  position: relative;
+.bg-obsidian-light {
+  background-color: var(--obsidian-light);
+  border-top: 1px solid var(--obsidian-border);
+  border-bottom: 1px solid var(--obsidian-border);
 }
 
 .blockquote-wrapper {
-  padding: var(--spacing-lg) var(--spacing-md);
-  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl) var(--spacing-md);
+  border-radius: var(--radius-md);
   position: relative;
   text-align: center;
   max-width: 900px;
@@ -81,87 +71,75 @@
 }
 
 .quote-icon {
-  color: var(--accent-gold);
-  opacity: 0.3;
+  color: var(--obsidian-border);
   position: absolute;
   top: 20px;
   left: 20px;
 }
 
-.chairman-quote {
-  font-size: 1.5rem;
-  font-style: italic;
-  color: var(--primary-blue-dark);
-  line-height: 1.8;
+.chairman-quote p {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  line-height: 1.4;
   margin: 0;
   position: relative;
   z-index: 2;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .chairman-quote footer {
-  margin-top: var(--spacing-md);
-  font-style: normal;
-  font-size: 1rem;
+  margin-top: var(--spacing-lg);
+  font-size: 0.85rem;
+  text-transform: uppercase;
 }
 
-.chairman-quote footer strong {
-  color: var(--accent-gold-dark);
-  font-size: 1.1rem;
-}
-
-/* Tabs */
-.tabs-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.tabs-header {
-  display: flex;
-  flex-direction: column;
+/* Fleet Matrix Bento Grid */
+.bento-fleet-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
 }
 
-@media (min-width: 640px) {
-  .tabs-header {
-    flex-direction: row;
-    justify-content: center;
+@media (min-width: 768px) {
+  .bento-fleet-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.tab-btn {
+@media (min-width: 1024px) {
+  .bento-fleet-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .fleet-wide {
+    grid-column: span 2;
+  }
+  
+  .fleet-metrics {
+    grid-column: span 3;
+  }
+}
+
+.fleet-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.fleet-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem;
-  background-color: var(--neutral-white);
-  border: 2px solid var(--neutral-light);
-  border-radius: var(--border-radius-md);
-  font-weight: 600;
-  color: var(--primary-blue);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  flex: 1;
+  gap: 0.75rem;
+  margin-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--obsidian-border);
+  padding-bottom: 0.5rem;
 }
 
-.tab-btn:hover {
-  border-color: var(--accent-gold);
-  background-color: var(--neutral-offwhite);
-}
-
-.tab-btn.active {
-  background-color: var(--primary-blue);
-  color: var(--neutral-white);
-  border-color: var(--primary-blue);
-}
-
-.tabs-content {
-  background-color: var(--neutral-white);
-  padding: var(--spacing-md);
-  border-radius: var(--border-radius-md);
-  border: 1px solid var(--neutral-light);
-  box-shadow: var(--shadow-sm);
+.fleet-header h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
 }
 
 .capability-list {
@@ -170,19 +148,47 @@
 }
 
 .capability-list li {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--neutral-light);
+  padding: 0.5rem 0;
   display: flex;
   align-items: center;
+  font-size: 0.95rem;
 }
 
 .capability-list li::before {
-  content: '✓';
-  color: var(--accent-gold);
-  font-weight: bold;
-  margin-right: 10px;
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-gold);
+  border-radius: 50%;
+  margin-right: 12px;
 }
 
-.capability-list li:last-child {
-  border-bottom: none;
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.metric-box {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--obsidian-border);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.metric-number {
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.metric-title {
+  font-size: 0.75rem;
 }

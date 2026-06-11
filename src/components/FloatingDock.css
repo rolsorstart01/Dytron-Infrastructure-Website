@@ -1,0 +1,49 @@
+.floating-dock {
+  position: fixed;
+  bottom: var(--spacing-md);
+  left: 50%;
+  transform: translateX(-50%) !important; /* overrides framer-motion x if needed, but we animate y */
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  z-index: 9999;
+  box-shadow: var(--shadow-subtle);
+}
+
+.dock-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: var(--text-primary);
+  background-color: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dock-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  color: var(--accent-gold);
+}
+
+.dock-item.whatsapp:hover {
+  color: #25D366;
+  background-color: rgba(37, 211, 102, 0.1);
+}
+
+@media (max-width: 768px) {
+  .floating-dock {
+    bottom: var(--spacing-sm);
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .dock-item {
+    width: 40px;
+    height: 40px;
+  }
+}
