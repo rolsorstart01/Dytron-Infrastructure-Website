@@ -1,0 +1,116 @@
+.projects-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.project-tab-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  background-color: var(--neutral-light);
+  color: var(--primary-blue);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-tab-btn:hover {
+  background-color: var(--neutral-gray);
+  color: var(--neutral-white);
+}
+
+.project-tab-btn.active {
+  background-color: var(--accent-gold);
+  color: var(--primary-blue-dark);
+  box-shadow: var(--shadow-gold);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.project-card {
+  background-color: var(--neutral-white);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--neutral-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-card-header {
+  padding: var(--spacing-md);
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.project-card-header.bg-blue {
+  background-color: var(--primary-blue);
+  color: var(--neutral-white);
+}
+
+.project-card-header.bg-gold {
+  background-color: var(--accent-gold);
+}
+
+.project-card-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: inherit;
+}
+
+.project-card-body {
+  padding: var(--spacing-md);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  color: var(--neutral-gray);
+  font-size: 0.9rem;
+}
+
+.meta-item, .meta-category {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.project-details {
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+}
+
+.project-client, .project-status {
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--neutral-light);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

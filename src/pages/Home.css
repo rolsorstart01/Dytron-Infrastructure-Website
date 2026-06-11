@@ -1,0 +1,138 @@
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background-image: url('/hero_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--neutral-white);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    rgba(10, 37, 64, 0.95) 0%, 
+    rgba(10, 37, 64, 0.7) 50%, 
+    rgba(255, 179, 0, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--neutral-white);
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.hero-tagline {
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: var(--spacing-md);
+  animation: fadeIn 1.2s ease-out;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+  
+  .hero-ctas {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}
+
+/* Strengths Grid */
+.strengths-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .strengths-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .strengths-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.strength-card {
+  background: var(--neutral-white);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 4px solid var(--accent-gold);
+  text-align: center;
+}
+
+.strength-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.strength-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: var(--neutral-offwhite);
+  color: var(--primary-blue);
+  border-radius: 50%;
+  margin-bottom: var(--spacing-sm);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.strength-card:hover .strength-icon {
+  background-color: var(--primary-blue);
+  color: var(--accent-gold);
+}
+
+.strength-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.strength-card p {
+  color: var(--neutral-gray);
+  font-size: 0.95rem;
+}
