@@ -101,6 +101,48 @@ const Home = () => {
             </FadeInWhenVisible>
           </div>
         </div>
+      {/* Testimonials Section */}
+      <section className="section bg-obsidian-light">
+        <div className="container">
+          <FadeInWhenVisible>
+            <h2 className="section-title tracking-tight">CLIENT TESTIMONIALS</h2>
+          </FadeInWhenVisible>
+          
+          <div className="testimonials-grid">
+            <FadeInWhenVisible delay={0.1} className="testimonial-card glass-panel">
+              <div className="quote-icon-small">"</div>
+              <p className="testimonial-text">
+                "Dytron Infrastructure delivered our industrial project ahead of schedule. Their attention to detail and massive labor capacity ensured seamless execution."
+              </p>
+              <div className="testimonial-author">
+                <strong className="text-gold">Jindal Steel & Power Ltd.</strong>
+                <span className="text-secondary">Industrial Operations</span>
+              </div>
+            </FadeInWhenVisible>
+            
+            <FadeInWhenVisible delay={0.2} className="testimonial-card glass-panel">
+              <div className="quote-icon-small">"</div>
+              <p className="testimonial-text">
+                "The structural integrity and quality assurance processes implemented during the hospital construction were world-class."
+              </p>
+              <div className="testimonial-author">
+                <strong className="text-gold">Medica Hospital Group</strong>
+                <span className="text-secondary">Healthcare Infrastructure</span>
+              </div>
+            </FadeInWhenVisible>
+            
+            <FadeInWhenVisible delay={0.3} className="testimonial-card glass-panel">
+              <div className="quote-icon-small">"</div>
+              <p className="testimonial-text">
+                "A truly professional team. Their inventory scale meant we never faced delays waiting for materials or heavy machinery."
+              </p>
+              <div className="testimonial-author">
+                <strong className="text-gold">Shristi Infrastructure</strong>
+                <span className="text-secondary">Residential Development</span>
+              </div>
+            </FadeInWhenVisible>
+          </div>
+        </div>
       </section>
     </div>
   );
