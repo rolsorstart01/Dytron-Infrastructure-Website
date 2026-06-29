@@ -27,7 +27,7 @@ const Header = () => {
     <header className="header glass-panel">
       <div className="container header-container">
         <Link to="/" className="logo-link" onClick={closeMenu}>
-          <img src="/MainLogo.png" alt="Dytron Infrastructure Logo" className="logo-img" />
+          <img src="/FinalLogo.png" alt="Dytron Infrastructure Logo" className="logo-img" />
           <div className="logo-text">
             <span className="logo-title">Dytron</span>
             <span className="logo-subtitle">Infrastructure Pvt. Ltd.</span>
