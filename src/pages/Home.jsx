@@ -101,6 +101,8 @@ const Home = () => {
             </FadeInWhenVisible>
           </div>
         </div>
+      </section>
+      
       {/* Testimonials Section */}
       <section className="section bg-obsidian-light">
         <div className="container">

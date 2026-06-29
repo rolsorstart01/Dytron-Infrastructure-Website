@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Header.css';
 
 const Header = () => {
@@ -26,7 +27,7 @@ const Header = () => {
     <header className="header glass-panel">
       <div className="container header-container">
         <Link to="/" className="logo-link" onClick={closeMenu}>
-          <img src="/dytron_logo.png" alt="Dytron Infrastructure Logo" className="logo-img" />
+          <img src="/MainLogo.png" alt="Dytron Infrastructure Logo" className="logo-img" />
           <div className="logo-text">
             <span className="logo-title">Dytron</span>
             <span className="logo-subtitle">Infrastructure Pvt. Ltd.</span>
@@ -50,29 +51,48 @@ const Header = () => {
         </nav>
 
         {/* Mobile Navigation Toggle */}
-        <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        <button 
+          className={`mobile-menu-btn ${isMenuOpen ? 'open' : ''}`} 
+          onClick={toggleMenu} 
+          aria-label="Toggle menu"
+        >
+          <span className="burger-line line-1"></span>
+          <span className="burger-line line-2"></span>
+          <span className="burger-line line-3"></span>
         </button>
       </div>
 
       {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <nav className="mobile-nav animate-fade-in">
-          <ul className="mobile-nav-list">
-            {navLinks.map((link) => (
-              <li key={link.path}>
-                <Link
-                  to={link.path}
-                  className={`mobile-nav-link ${location.pathname === link.path ? 'active' : ''}`}
-                  onClick={closeMenu}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.nav 
+            className="mobile-nav"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <ul className="mobile-nav-list">
+              {navLinks.map((link, index) => (
+                <motion.li 
+                  key={link.path}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: index * 0.05 }}
                 >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
+                  <Link
+                    to={link.path}
+                    className={`mobile-nav-link ${location.pathname === link.path ? 'active' : ''}`}
+                    onClick={closeMenu}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

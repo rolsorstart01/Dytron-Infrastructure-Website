@@ -17,7 +17,7 @@ const FloatingDock = () => {
       <a href="tel:+919874248732" className="dock-item" aria-label="Call Us">
         <Phone size={22} />
       </a>
-      <a href="mailto:info@dytroninfra.com" className="dock-item" aria-label="Email Us">
+      <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJNqKqvSVqgQHKtQxTQNgKGTVlccwdrDhQgdfxjmFRBTGKCtpfPsGrfrVvjtgFMXNXvVbxq" target="_blank" rel="noopener noreferrer" className="dock-item" aria-label="Email Us">
         <Mail size={22} />
       </a>
     </motion.div>

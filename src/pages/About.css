@@ -1,11 +1,11 @@
 .page-header {
   padding: calc(var(--spacing-lg) * 2) 0 var(--spacing-lg);
   border-bottom: 1px solid var(--obsidian-border);
-  background: radial-gradient(circle at center top, rgba(10, 37, 64, 0.4), transparent 70%);
+  background: radial-gradient(circle at center top, rgba(230, 149, 27, 0.12), rgba(13, 15, 18, 0.8) 60%, transparent 100%);
 }
 
 .page-title {
-  font-size: 4rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   margin-bottom: var(--spacing-xs);
 }
@@ -13,6 +13,16 @@
 .page-subtitle {
   color: var(--accent-gold);
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.25rem;
+  }
+  .page-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
 }
 
 /* Profile Section */
@@ -32,7 +42,7 @@
 .lead-text {
   font-size: 1.25rem;
   margin-bottom: var(--spacing-md);
-  color: var(--primary-blue-light);
+  color: var(--accent-gold);
 }
 
 .profile-graphic-container {
@@ -62,36 +72,68 @@
 }
 
 .blockquote-wrapper {
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md);
   border-radius: var(--radius-md);
   position: relative;
-  text-align: center;
   max-width: 900px;
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .page-header {
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+  }
+  .profile-grid {
+    gap: var(--spacing-md) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .blockquote-wrapper {
+    padding: calc(var(--spacing-md) * 2) var(--spacing-sm) var(--spacing-md);
+  }
+  .chairman-quote p {
+    font-size: 1.1rem !important;
+  }
+}
+
+.quote-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: var(--spacing-sm);
+  padding: 0 var(--spacing-sm);
+}
+
 .quote-icon {
-  color: var(--obsidian-border);
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.chairman-quote {
+  padding-top: 0;
 }
 
 .chairman-quote p {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  line-height: 1.4;
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.6;
   margin: 0;
   position: relative;
   z-index: 2;
   color: var(--text-primary);
-  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.chairman-quote strong {
+  font-weight: 600;
+  color: var(--accent-gold);
 }
 
 .chairman-quote footer {
   margin-top: var(--spacing-lg);
   font-size: 0.85rem;
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* Fleet Matrix Bento Grid */
@@ -168,6 +210,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-md);
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
 }
 
 @media (min-width: 768px) {

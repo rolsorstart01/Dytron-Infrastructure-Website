@@ -28,8 +28,8 @@ const AnimatedNumber = ({ end, duration, inView }) => {
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
-      // easeOut function
-      const easeOut = 1 - (1 - progress) * (1 - progress);
+      // easeOutQuart function for smoother deceleration
+      const easeOut = 1 - Math.pow(1 - progress, 4);
       setCount(Math.floor(easeOut * end));
       if (progress < 1) {
         window.requestAnimationFrame(step);
@@ -45,8 +45,8 @@ const MetricCounter = ({ end, suffix = "", title }) => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
   return (
     <div className="metric-box" ref={ref}>
-      <h4 className="metric-number text-gold tracking-tighter" style={{ fontFamily: 'var(--font-heading)' }}>
-        <AnimatedNumber end={end} duration={2.5} inView={inView} />{suffix}
+      <h4 className="metric-number text-gold tracking-tighter" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontVariantNumeric: 'tabular-nums', fontWeight: 'bold' }}>
+        <AnimatedNumber end={end} duration={3.0} inView={inView} />{suffix}
       </h4>
       <p className="metric-title text-secondary tracking-widest">{title}</p>
     </div>
@@ -69,7 +69,8 @@ const About = () => {
         <div className="container profile-grid">
           <FadeIn className="profile-content">
             <h2 className="tracking-tight">COMPANY PROFILE</h2>
-            <p className="lead-text text-blue">
+            <br></br>
+            <p className="lead-text text-gold">
               <strong>Dytron Infrastructure Pvt. Ltd.</strong> (Formerly known as Dytron Industries Pvt. Ltd.) was established on <strong>17.09.2019</strong>.
             </p>
             <p className="text-secondary">
@@ -77,9 +78,8 @@ const About = () => {
             </p>
           </FadeIn>
           
-          <FadeIn delay={0.2} className="profile-graphic-container grayscale-hover">
+          <FadeIn delay={0.2} className="profile-graphic-container">
             <div className="profile-graphic">
-              <div className="graphic-overlay"></div>
             </div>
           </FadeIn>
         </div>
@@ -88,13 +88,19 @@ const About = () => {
       <section className="section bg-obsidian-light">
         <div className="container">
           <FadeIn className="blockquote-wrapper glass-panel">
-            <Quote size={60} className="quote-icon" />
+            <div className="quote-header">
+              <Quote size={40} className="quote-icon" />
+            </div>
             <blockquote className="chairman-quote">
               <p>
-                "Our vision is to be a trusted leader in delivering world-class, sustainable infrastructure. We are on a mission to execute high-quality, cost-effective, and timely EPC/civil contracts that stand the test of time and empower communities."
+                <strong>Vision:</strong> To be a trusted leader in the construction industry, delivering world class infrastructure and sustainable spaces that inspire growth, improve quality of life and stand the test of time.
+              </p>
+              <br />
+              <p>
+                <strong>Mission:</strong> To deliver high quality, cost effective and timely construction solutions that exceed client expectations. We are committed to building lasting relationships with clients, partners and communities through integrity and transparency.
               </p>
               <footer>
-                <strong className="text-gold tracking-widest">CHAIRMAN & MANAGING DIRECTOR</strong>
+                <strong className="text-gold tracking-widest">CHAIRMAN'S MESSAGE</strong>
                 <br />
                 <span className="text-secondary">Dytron Infrastructure Pvt. Ltd.</span>
               </footer>
@@ -108,7 +114,7 @@ const About = () => {
           <FadeIn>
             <h2 className="section-title tracking-tight text-center">FLEET MATRIX</h2>
           </FadeIn>
-          
+          <br></br>
           <div className="bento-fleet-grid">
             <FadeIn delay={0.1} className="bento-card fleet-card">
               <div className="fleet-header">

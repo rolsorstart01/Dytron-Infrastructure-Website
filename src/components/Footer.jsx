@@ -34,7 +34,7 @@ const Footer = () => {
             <ul>
               <li>
                 <MapPin size={18} className="text-gold" />
-                <span>Kolkata, West Bengal (HQ)</span>
+                <span>Kolkata, West Bengal </span>
               </li>
               <li>
                 <Phone size={18} className="text-gold" />
@@ -42,7 +42,7 @@ const Footer = () => {
               </li>
               <li>
                 <Mail size={18} className="text-gold" />
-                <span>info@dytroninfra.com</span>
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJNqKqvSVqgQHKtQxTQNgKGTVlccwdrDhQgdfxjmFRBTGKCtpfPsGrfrVvjtgFMXNXvVbxq" target="_blank" rel="noopener noreferrer"><span>info@dytroninfra.com</span></a>
               </li>
             </ul>
           </div>

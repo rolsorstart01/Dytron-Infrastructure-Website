@@ -3,18 +3,18 @@
 :root {
   /* High-Contrast Obsidian Theme */
   --obsidian-base: #0D0F12;
-  --obsidian-light: #161A1F;
-  --obsidian-border: rgba(255, 255, 255, 0.08);
+  --obsidian-light: #1A1D24;
+  --obsidian-border: rgba(26, 29, 36, 0.8); /* Used #1A1D24 */
   
   /* Brand Colors from Logo */
-  --primary-blue: #0A2540;
-  --primary-blue-light: #183C66;
-  --accent-gold: #FFB300;
-  --accent-gold-dark: #E6A200;
+  --primary-blue: #0A2E5C;
+  --primary-blue-light: #0A2E5C;
+  --accent-gold: #E6951B;
+  --accent-gold-dark: #E6951B;
   
   /* Text */
   --text-primary: #FFFFFF;
-  --text-secondary: #9CA3AF;
+  --text-secondary: #8A94A6;
   --text-muted: #6B7280;
 
   /* Typography */
@@ -38,6 +38,14 @@
   /* Shadows */
   --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.3);
   --shadow-glow: 0 0 20px rgba(255, 179, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-md: 1.25rem;
+    --spacing-lg: 2.25rem;
+    --spacing-xl: 3.5rem;
+  }
 }
 
 * {

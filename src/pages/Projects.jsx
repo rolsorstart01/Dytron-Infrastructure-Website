@@ -9,55 +9,104 @@ const Projects = () => {
   const activeProjects = [
     {
       id: 1,
-      title: 'Affordable Housing GWH – Sangati',
-      location: 'Guwahati, Assam',
-      client: 'Shristi Infrastructure Development Corporation Ltd.',
-      details: 'S+G+9 Block B1 & B2, ~200,000 Sqft structure execution.',
+      title: 'Affordable Housing GWH – Sangati (S+G+9) Block B1 & B2',
+      location: 'Shristinagar, Guwahati',
+      client: 'Shristi Infrastructure Development Corporation Ltd., Kolkata',
+      details: 'Area: Approx. 200,000 Sq. Ft. | Job Value: Approx. 8 Cr.',
     },
     {
       id: 2,
-      title: 'Industrial Civil Works',
-      location: 'Angul, Odisha',
+      title: 'Civil Construction Work',
+      location: 'Angul, Orissa',
       client: 'Jindal Steel & Power Ltd. (JSPL)',
-      details: 'Heavy industrial infrastructure execution.',
+      details: 'Job Value: Approx. 5 Cr.',
     },
     {
       id: 3,
-      title: 'G+7 Residential Complex',
-      location: 'Beltola, Guwahati',
-      client: 'Private Developer',
-      details: 'Core piling and structural execution.',
+      title: 'Construction of G+7 Residential Complex',
+      location: 'Beltola Survey area, Guwahati',
+      client: '-',
+      details: 'Only piling and Structure | Job Value: Approx. 4.50 Cr.',
     },
     {
       id: 4,
-      title: 'Surya Vilas',
-      location: 'Gangtok, Sikkim',
-      client: 'Real Estate Associates',
-      details: 'G+8 Residential complex structural frame.',
+      title: 'Construction of G+8 Residential Complex',
+      location: 'Surya Vilas, Gangtok, Sikkim',
+      client: '-',
+      details: 'Only structure | Job Value: Approx. 5 Cr.',
+    },
+    {
+      id: 5,
+      title: 'Construction of Civil Foundation Work',
+      location: 'Hind Motor',
+      client: 'Titagarh Rail Systems Limited',
+      details: 'Ware House: 8.25 Cr., Passivation Booth: 0.29 Cr., Shot Blasting Booth: 0.26 Cr., Aluminium Coach Manufacturing Shed: 3.35 Cr.',
     }
   ];
 
   const pastProjects = [
     {
-      id: 5,
+      id: 6,
+      title: 'Industrial Project Work',
+      location: 'JSPL, Angul, Orissa',
+      category: 'Industrial',
+      details: 'Heavy industrial infrastructure execution.',
+    },
+    {
+      id: 7,
+      title: 'Residential Building Project Work',
+      location: 'Gangtok, Sikkim',
+      category: 'Residential',
+      details: 'Residential complex structural execution.',
+    },
+    {
+      id: 8,
+      title: 'Piling Work for Residential Building',
+      location: 'Beltola, Guwahati',
+      category: 'Residential',
+      details: 'Piling work for residential development.',
+    },
+    {
+      id: 9,
       title: 'Medica Hospital',
-      location: 'Mukundapur, Kolkata',
+      location: 'Kolkata',
       category: 'Healthcare',
       details: 'Major structural involvement in specialized healthcare facility.',
     },
     {
-      id: 6,
+      id: 10,
       title: 'Civil Secretariat Building',
-      location: 'Itanagar, Arunachal Pradesh',
+      location: 'Itanagar',
       category: 'Civic',
       details: 'Large-scale government administrative complex.',
     },
     {
-      id: 7,
+      id: 11,
       title: 'Delhi Public School',
       location: 'New Town, Kolkata',
       category: 'Education',
       details: 'Institutional campus structural development.',
+    },
+    {
+      id: 12,
+      title: 'IIM Shillong',
+      location: 'Shillong',
+      category: 'Education',
+      details: 'Educational campus development.',
+    },
+    {
+      id: 13,
+      title: 'IIT Guwahati',
+      location: 'Guwahati',
+      category: 'Education',
+      details: 'Educational campus infrastructure.',
+    },
+    {
+      id: 14,
+      title: 'Novotel Guwahati',
+      location: 'Guwahati',
+      category: 'Hospitality',
+      details: 'Hospitality infrastructure execution.',
     }
   ];
 
@@ -106,14 +155,14 @@ const Projects = () => {
               className={`project-tab-btn ${activeTab === 'active' ? 'active' : ''}`}
               onClick={() => setActiveTab('active')}
             >
-              Active Works in Hand
+              Ongoing Projects
             </button>
             <button 
               className={`project-tab-btn ${activeTab === 'past' ? 'active' : ''}`}
               onClick={() => setActiveTab('past')}
             >
-              Personnel Track Record
-            </button>
+              Delivered Projects
+            </button> 
           </div>
 
           <motion.div 
