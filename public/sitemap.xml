@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://[INSERT_YOUR_PRODUCTION_DOMAIN_HERE.com]/</loc>
+    <loc>https://www.dytroninfra.com/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://[INSERT_YOUR_PRODUCTION_DOMAIN_HERE.com]/about</loc>
+    <loc>https://www.dytroninfra.com/about</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://[INSERT_YOUR_PRODUCTION_DOMAIN_HERE.com]/projects</loc>
+    <loc>https://www.dytroninfra.com/projects</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://[INSERT_YOUR_PRODUCTION_DOMAIN_HERE.com]/contact</loc>
+    <loc>https://www.dytroninfra.com/contact</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
